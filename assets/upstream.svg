@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 366" width="900" height="366" role="img" aria-labelledby="title desc">
+  <title id="title">upstream patches in review</title>
+  <desc id="desc">Open pull requests: go-ethereum 35806, cometbft 6091 and 6090, nitro 4748, dydx v4 3403, osmosis 9743, cosmjs 1983.</desc>
+  <defs>
+    <clipPath id="card"><rect x="1" y="1" width="898" height="364" rx="14"/></clipPath>
+    <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="1" fill="#ffffff" opacity=".035"/>
+    </pattern>
+    <radialGradient id="vignette" cx="80%" cy="10%" r="90%">
+      <stop offset="0" stop-color="#7aa2ff" stop-opacity=".07"/>
+      <stop offset=".6" stop-color="#7aa2ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <style>
+    text { font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, "Cascadia Mono", Consolas, "Liberation Mono", monospace; font-size: 14px; fill: #c8d0c9; white-space: pre; }
+    .dim { fill: #5f6f66; }
+    .amb { fill: #ffb454; }
+    .ok { fill: #3ddc97; }
+    .peer { fill: #7aa2ff; }
+    .t { font-size: 13px; }
+    .tag { font-size: 11px; letter-spacing: .04em; }
+
+    .row { opacity: 0; transform: translateX(-8px); animation: in .35s cubic-bezier(.2,.8,.2,1) forwards; }
+    @keyframes in { to { opacity: 1; transform: none; } }
+
+    .rail { stroke-dasharray: 260; stroke-dashoffset: 260; animation: draw 2.1s linear .3s forwards; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+
+    .ping { transform-box: fill-box; transform-origin: center; animation: ping 2.4s ease-out 3s infinite; }
+    @keyframes ping { 0% { transform: scale(1); opacity: .8; } 70%, 100% { transform: scale(3.2); opacity: 0; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .row { opacity: 1; transform: none; animation: none; }
+      .rail { stroke-dashoffset: 0; animation: none; }
+      .ping { animation: none; opacity: 0; }
+    }
+  </style>
+
+  <rect x="1" y="1" width="898" height="364" rx="14" fill="#0b0f0d" stroke="#243029"/>
+  <g clip-path="url(#card)">
+    <rect width="900" height="40" fill="#111713"/>
+    <line x1="0" y1="40.5" x2="900" y2="40.5" stroke="#1f2a24"/>
+    <text x="24" y="25"><tspan class="amb">jonathan@nansen</tspan><tspan class="dim">:~$ </tspan>git log --upstream --graph --state=open</text>
+    <text x="876" y="25" class="dim t" text-anchor="end">bugs hit in prod · fixed at the source</text>
+
+    <!-- commit rail -->
+    <line x1="44" y1="76" x2="44" y2="280" stroke="#2c3a33" stroke-width="2"/>
+    <line x1="44" y1="76" x2="44" y2="280" stroke="#7aa2ff" stroke-width="2" class="rail"/>
+    <!-- cometbft branch -->
+    <path d="M44 110 C 44 122, 60 122, 60 132 L 60 156 C 60 166, 44 166, 44 178" fill="none" stroke="#7aa2ff" stroke-width="2" opacity=".55" class="rail"/>
+
+    <g class="row" style="animation-delay:.3s">
+      <circle cx="44" cy="76" r="5" fill="#0b0f0d" stroke="#7aa2ff" stroke-width="2"/>
+      <circle cx="44" cy="76" r="3" fill="#7aa2ff" class="ping"/>
+      <text x="72" y="81" class="amb">#35806</text><text x="146" y="81" class="peer">go-ethereum</text>
+      <text x="282" y="81" class="t">apply withdrawals before post-execution system calls</text>
+    </g>
+    <g class="row" style="animation-delay:.6s">
+      <circle cx="44" cy="110" r="5" fill="#0b0f0d" stroke="#7aa2ff" stroke-width="2"/>
+      <text x="72" y="115" class="amb">#6091</text><text x="146" y="115" class="peer">cometbft</text>
+      <text x="282" y="115" class="t">fsync parent directory after atomic rename</text>
+    </g>
+    <g class="row" style="animation-delay:.9s">
+      <circle cx="60" cy="144" r="5" fill="#0b0f0d" stroke="#7aa2ff" stroke-width="2" opacity=".8"/>
+      <text x="72" y="149" class="amb">#6090</text><text x="146" y="149" class="peer">cometbft</text>
+      <text x="282" y="149" class="t">copy full conflicting block hash in LightClientAttackEvidence</text>
+    </g>
+    <g class="row" style="animation-delay:1.2s">
+      <circle cx="44" cy="178" r="5" fill="#0b0f0d" stroke="#7aa2ff" stroke-width="2"/>
+      <text x="72" y="183" class="amb">#4748</text><text x="146" y="183" class="peer">nitro</text>
+      <text x="282" y="183" class="t">fall back to read-write when read-only l2chaindata probe fails</text>
+    </g>
+    <g class="row" style="animation-delay:1.5s">
+      <circle cx="44" cy="212" r="5" fill="#0b0f0d" stroke="#7aa2ff" stroke-width="2"/>
+      <text x="72" y="217" class="amb">#3403</text><text x="146" y="217" class="peer">dydx-v4</text>
+      <text x="282" y="217" class="t">release streaming subscriptions on client disconnect</text>
+    </g>
+    <g class="row" style="animation-delay:1.8s">
+      <circle cx="44" cy="246" r="5" fill="#0b0f0d" stroke="#7aa2ff" stroke-width="2"/>
+      <text x="72" y="251" class="amb">#9743</text><text x="146" y="251" class="peer">osmosis</text>
+      <text x="282" y="251" class="t">ibc-rate-limit receiver_chain_is_source trailing slash</text>
+    </g>
+    <g class="row" style="animation-delay:2.1s">
+      <circle cx="44" cy="280" r="5" fill="#0b0f0d" stroke="#7aa2ff" stroke-width="2"/>
+      <text x="72" y="285" class="amb">#1983</text><text x="146" y="285" class="peer">cosmjs</text>
+      <text x="282" y="285" class="t">stop passing Infinity as bech32 decode limit</text>
+    </g>
+
+    <line x1="24" y1="312.5" x2="876" y2="312.5" stroke="#1f2a24" class="row" style="animation-delay:2.4s"/>
+    <text x="24" y="341" class="row" style="animation-delay:2.5s"><tspan class="peer">7</tspan><tspan class="dim"> in review · </tspan><tspan class="peer">6</tspan><tspan class="dim"> clients · </tspan><tspan class="ok">[ MERGED ]</tspan> validator registries: aztec · monad · metis</text>
+
+    <rect width="900" height="366" fill="url(#vignette)" pointer-events="none"/>
+    <rect width="900" height="366" fill="url(#scan)" pointer-events="none"/>
+  </g>
+</svg>
