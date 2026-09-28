@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="900" height="400" role="img" aria-labelledby="title desc">
+  <title id="title">jonathan-nansen — node boot log</title>
+  <desc id="desc">Terminal boot log: Jonathan Chin, staking and infrastructure engineer at Nansen. Chains: Ethereum, Solana, Cosmos, Aztec, Monad, Metis, NEAR. Upstream contributions to go-ethereum, CometBFT, Nitro, dYdX v4, Osmosis and CosmJS.</desc>
+  <defs>
+    <clipPath id="card"><rect x="1" y="1" width="898" height="398" rx="14"/></clipPath>
+    <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="1" fill="#ffffff" opacity=".035"/>
+    </pattern>
+    <radialGradient id="vignette" cx="30%" cy="20%" r="90%">
+      <stop offset="0" stop-color="#ffb454" stop-opacity=".07"/>
+      <stop offset=".6" stop-color="#ffb454" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-10%" y="-40%" width="120%" height="180%">
+      <feGaussianBlur stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <style>
+    text { font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, "Cascadia Mono", Consolas, "Liberation Mono", monospace; font-size: 14px; fill: #c8d0c9; white-space: pre; }
+    .dim { fill: #5f6f66; }
+    .amb { fill: #ffb454; }
+    .ok { fill: #3ddc97; }
+    .peer { fill: #7aa2ff; }
+    .sync { fill: #e879b9; }
+    .hi { fill: #f4f1ea; font-weight: 700; }
+    .bar { font-size: 12px; }
+
+    .l { opacity: 0; animation: on 0s linear forwards; }
+    @keyframes on { to { opacity: 1; } }
+
+    .type { animation: type var(--d) steps(var(--n)) var(--t) forwards; }
+    @keyframes type { to { transform: translateX(var(--w)); } }
+
+    .fill { transform-box: fill-box; transform-origin: left; transform: scaleX(0); animation: fill 1.3s cubic-bezier(.3,.7,.2,1) 3.3s forwards; }
+    @keyframes fill { to { transform: scaleX(1); } }
+
+    .cursor { opacity: 0; animation: on 0s 6.5s forwards, blink 1s steps(1) 6.5s infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    .pulse { stroke-dasharray: 150; stroke-dashoffset: 150; animation: beat 2.4s linear infinite; }
+    @keyframes beat { 60%, 100% { stroke-dashoffset: -150; } }
+    .dot { animation: breathe 2.4s ease-in-out infinite; }
+    @keyframes breathe { 50% { opacity: .35; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .l, .cursor { opacity: 1; animation: none; }
+      .type { display: none; }
+      .fill { transform: none; animation: none; }
+      .pulse, .dot { animation: none; stroke-dashoffset: 0; }
+    }
+  </style>
+
+  <!-- card -->
+  <rect x="1" y="1" width="898" height="398" rx="14" fill="#0b0f0d" stroke="#243029"/>
+  <g clip-path="url(#card)">
+    <!-- title bar -->
+    <rect width="900" height="40" fill="#111713"/>
+    <line x1="0" y1="40.5" x2="900" y2="40.5" stroke="#1f2a24"/>
+    <text x="24" y="25" class="dim">tty1 — <tspan class="amb">jonathan@nansen</tspan> — mainnet</text>
+    <circle class="dot" cx="742" cy="20" r="4" fill="#3ddc97"/>
+    <text x="754" y="25" class="ok" font-size="12">signing</text>
+    <path class="pulse" d="M812 20 H834 L839 11 L845 29 L850 20 H876" fill="none" stroke="#3ddc97" stroke-width="1.6" stroke-linejoin="round"/>
+
+    <!-- boot log -->
+    <g transform="translate(0 4)">
+      <text x="32" y="74" class="l" style="animation-delay:.3s"><tspan class="amb">jonathan@nansen</tspan><tspan class="dim">:~$ </tspan>./boot --validator</text>
+      <rect x="192" y="60" width="170" height="20" fill="#0b0f0d" class="type" style="--t:.45s;--d:.9s;--n:18;--w:170px"/>
+
+      <text x="32" y="100" class="l dim" style="animation-delay:1.7s">booting node ... genesis 2024-04-05</text>
+      <text x="32" y="124" class="l" style="animation-delay:2.0s"><tspan class="ok">[  OK  ]</tspan> chains <tspan class="dim">.........</tspan> ethereum · solana · cosmos · aztec · monad · metis · near</text>
+      <text x="32" y="148" class="l" style="animation-delay:2.25s"><tspan class="ok">[  OK  ]</tspan> infra <tspan class="dim">..........</tspan> terraform · kubernetes · ansible · gcp</text>
+      <text x="32" y="172" class="l" style="animation-delay:2.5s"><tspan class="ok">[  OK  ]</tspan> observe <tspan class="dim">........</tspan> prometheus · grafana · loki</text>
+      <text x="32" y="196" class="l" style="animation-delay:2.75s"><tspan class="ok">[  OK  ]</tspan> langs <tspan class="dim">..........</tspan> go · typescript · python · bash</text>
+      <text x="32" y="220" class="l" style="animation-delay:3.0s"><tspan class="peer">[ PEER ]</tspan> upstream <tspan class="dim">.......</tspan> go-ethereum · cometbft · nitro · dydx-v4 · osmosis · cosmjs</text>
+      <text x="32" y="244" class="l" style="animation-delay:3.3s"><tspan class="sync">[ SYNC ]</tspan> blocks <tspan class="dim">.........</tspan> 950+ contributions in the last year</text>
+      <g class="l" style="animation-delay:3.3s">
+        <rect x="606" y="233" width="200" height="12" rx="2" fill="#1a221e"/>
+        <rect x="606" y="233" width="200" height="12" rx="2" fill="#e879b9" class="fill" filter="url(#glow)"/>
+      </g>
+      <text x="818" y="244" class="l sync bar" style="animation-delay:4.6s">100%</text>
+
+      <text x="32" y="280" class="l" style="animation-delay:5.0s"><tspan class="amb">jonathan@nansen</tspan><tspan class="dim">:~$ </tspan>whoami</text>
+      <rect x="192" y="266" width="60" height="20" fill="#0b0f0d" class="type" style="--t:5.1s;--d:.45s;--n:6;--w:60px"/>
+
+      <text x="32" y="310" class="l hi" style="animation-delay:5.9s" filter="url(#glow)">Jonathan Chin <tspan class="dim" font-weight="400">—</tspan> <tspan class="amb">staking &amp; infrastructure engineer @ nansen-ai</tspan></text>
+      <text x="32" y="334" class="l" style="animation-delay:6.2s">keeping validators signing, and fixing the clients they run on.</text>
+
+      <text x="32" y="368" class="l" style="animation-delay:6.5s"><tspan class="amb">jonathan@nansen</tspan><tspan class="dim">:~$ </tspan></text>
+      <rect x="192" y="355" width="9" height="17" fill="#ffb454" class="cursor"/>
+    </g>
+
+    <rect width="900" height="400" fill="url(#vignette)" pointer-events="none"/>
+    <rect width="900" height="400" fill="url(#scan)" pointer-events="none"/>
+  </g>
+</svg>
