@@ -57,9 +57,9 @@
     <rect width="900" height="40" fill="#111713"/>
     <line x1="0" y1="40.5" x2="900" y2="40.5" stroke="#1f2a24"/>
     <text x="24" y="25" class="dim">tty1 — <tspan class="amb">jonathan@nansen</tspan> — mainnet</text>
-    <circle class="dot" cx="742" cy="20" r="4" fill="#3ddc97"/>
-    <text x="754" y="25" class="ok" font-size="12">signing</text>
-    <path class="pulse" d="M812 20 H834 L839 11 L845 29 L850 20 H876" fill="none" stroke="#3ddc97" stroke-width="1.6" stroke-linejoin="round"/>
+    <circle class="dot" cx="742" cy="20" r="4" fill="{{signal_color}}"/>
+    <text x="754" y="25" font-size="12" style="fill:{{signal_color}}">{{signal}}</text>
+    <path class="pulse" d="M812 20 H834 L839 11 L845 29 L850 20 H876" fill="none" stroke="{{signal_color}}" stroke-width="1.6" stroke-linejoin="round"/>
 
     <!-- boot log -->
     <g transform="translate(0 4)">

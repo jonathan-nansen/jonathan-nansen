@@ -1,7 +1,55 @@
 {
   "exclude_org": "nansen-ai",
-  "chains": ["ethereum", "solana", "cosmos", "aztec", "monad", "metis", "near"],
-  "infra": ["terraform", "kubernetes", "ansible", "gcp"],
-  "observe": ["prometheus", "grafana", "loki"],
-  "tagline": "keeping validators signing, and fixing the clients they run on."
+  "chains": [
+    "ethereum",
+    "solana",
+    "cosmos",
+    "aztec",
+    "monad",
+    "metis",
+    "near"
+  ],
+  "infra": [
+    "terraform",
+    "kubernetes",
+    "ansible",
+    "gcp"
+  ],
+  "observe": [
+    "prometheus",
+    "grafana",
+    "loki"
+  ],
+  "tagline": "keeping validators signing, and fixing the clients they run on.",
+  "validators": [
+    {
+      "chain": "hyperliquid",
+      "kind": "hyperliquid",
+      "address": "0xb8f45222a3246a2b0104696a1df26842007c5bc5",
+      "symbol": "HYPE"
+    },
+    {
+      "chain": "solana",
+      "kind": "solana",
+      "vote": "2NxEEbhqqj1Qptq5LXLbDTP5tLa9f7PqkU8zNgxbGU9P",
+      "identity": "CoG8d9Fp2TFJRkAmrPMiPsGhQWHzdTTVoegEp9svRgmJ",
+      "symbol": "SOL"
+    },
+    {
+      "chain": "injective",
+      "kind": "cosmos",
+      "registry": "injective",
+      "address": "injvaloper1nm48eujr28u3htqrjumfwhytn63rmca2prtklt",
+      "symbol": "INJ",
+      "decimals": 18
+    },
+    {
+      "chain": "cosmos hub",
+      "kind": "cosmos",
+      "registry": "cosmoshub",
+      "address": "cosmosvaloper1jlr62guqwrwkdt4m3y00zh2rrsamhjf9num5xr",
+      "symbol": "ATOM",
+      "decimals": 6
+    }
+  ]
 }

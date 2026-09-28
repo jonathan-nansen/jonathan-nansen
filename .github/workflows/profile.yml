@@ -2,7 +2,7 @@ name: profile
 
 on:
   schedule:
-    - cron: "17 0 * * *"
+    - cron: "17 * * * *"
   workflow_dispatch:
   push:
     branches: [main]
@@ -24,7 +24,8 @@ jobs:
 
       - name: render cards
         run: |
-          python3 .github/scripts/header.py "$GITHUB_REPOSITORY_OWNER" profile.json .github/templates/header.svg dist/header.svg
+          python3 .github/scripts/validators.py profile.json dist/validators.svg validators.json
+          python3 .github/scripts/header.py "$GITHUB_REPOSITORY_OWNER" profile.json .github/templates/header.svg dist/header.svg validators.json
           python3 .github/scripts/upstream.py "$GITHUB_REPOSITORY_OWNER" "$(jq -r .exclude_org profile.json)" dist/upstream.svg
           python3 .github/scripts/contrib3d.py "$GITHUB_REPOSITORY_OWNER" dist/contrib-3d.svg
           python3 .github/scripts/snake.py "$GITHUB_REPOSITORY_OWNER" dist/snake.svg

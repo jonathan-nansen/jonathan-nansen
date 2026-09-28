@@ -1,6 +1,6 @@
 """Fill the boot-log header template with live GitHub data.
 
-usage: GITHUB_TOKEN=... python header.py <user> <profile.json> <template.svg> <out.svg>
+usage: GITHUB_TOKEN=... python header.py <user> <profile.json> <template.svg> <out.svg> <validators-status.json>
 """
 import json
 import os
@@ -45,7 +45,7 @@ def dots(items):
     return " · ".join(items)
 
 
-def fill(data, cfg):
+def fill(data, cfg, healthy):
     user = data["user"]
     prs = [p for p in data["search"]["nodes"] if p]
     cal = user["contributionsCollection"]["contributionCalendar"]
@@ -79,16 +79,20 @@ def fill(data, cfg):
         "bar_w": f"{BAR_W * active / len(days):.1f}",
         "head": head,
         "tagline": cfg["tagline"],
+        "signal": "signing" if healthy else "degraded",
+        "signal_color": "#3ddc97" if healthy else "#ff6b6b",
     }
 
 
 if __name__ == "__main__":
-    user, cfg_path, tpl_path, out = sys.argv[1:5]
+    user, cfg_path, tpl_path, out, status_path = sys.argv[1:6]
+    with open(status_path) as f:
+        healthy = json.load(f)["healthy"]
     with open(cfg_path) as f:
         cfg = json.load(f)
     with open(tpl_path) as f:
         svg = f.read()
-    for key, val in fill(fetch(user, cfg["exclude_org"]), cfg).items():
+    for key, val in fill(fetch(user, cfg["exclude_org"]), cfg, healthy).items():
         svg = svg.replace("{{%s}}" % key, escape(val))
     if "{{" in svg:
         sys.exit("unfilled placeholder in header template")
