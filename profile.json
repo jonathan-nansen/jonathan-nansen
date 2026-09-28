@@ -1,0 +1,7 @@
+{
+  "exclude_org": "nansen-ai",
+  "chains": ["ethereum", "solana", "cosmos", "aztec", "monad", "metis", "near"],
+  "infra": ["terraform", "kubernetes", "ansible", "gcp"],
+  "observe": ["prometheus", "grafana", "loki"],
+  "tagline": "keeping validators signing, and fixing the clients they run on."
+}

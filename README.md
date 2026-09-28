@@ -13,8 +13,5 @@
 </p>
 
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/jonathan-nansen/jonathan-nansen/output/snake-dark.svg?v=2">
-    <img src="https://raw.githubusercontent.com/jonathan-nansen/jonathan-nansen/output/snake-light.svg?v=2" width="100%" alt="Snake eating the contribution graph">
-  </picture>
+  <img src="https://raw.githubusercontent.com/jonathan-nansen/jonathan-nansen/output/snake.svg?v=2" width="100%" alt="Snake eating the contribution grid and growing">
 </p>

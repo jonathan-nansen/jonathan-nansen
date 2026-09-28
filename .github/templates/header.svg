@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="900" height="400" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 424" width="900" height="424" role="img" aria-labelledby="title desc">
   <title id="title">jonathan-nansen — node boot log</title>
   <desc id="desc">Terminal boot log: Jonathan Chin, staking and infrastructure engineer at Nansen. Chains: Ethereum, Solana, Cosmos, Aztec, Monad, Metis, NEAR. Upstream contributions to go-ethereum, CometBFT, Nitro, dYdX v4, Osmosis and CosmJS.</desc>
   <defs>
-    <clipPath id="card"><rect x="1" y="1" width="898" height="398" rx="14"/></clipPath>
+    <clipPath id="card"><rect x="1" y="1" width="898" height="422" rx="14"/></clipPath>
     <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse">
       <rect width="4" height="1" fill="#ffffff" opacity=".035"/>
     </pattern>
@@ -51,7 +51,7 @@
   </style>
 
   <!-- card -->
-  <rect x="1" y="1" width="898" height="398" rx="14" fill="#0b0f0d" stroke="#243029"/>
+  <rect x="1" y="1" width="898" height="422" rx="14" fill="#0b0f0d" stroke="#243029"/>
   <g clip-path="url(#card)">
     <!-- title bar -->
     <rect width="900" height="40" fill="#111713"/>
@@ -66,30 +66,32 @@
       <text x="32" y="74" class="l" style="animation-delay:.3s"><tspan class="amb">jonathan@nansen</tspan><tspan class="dim">:~$ </tspan>./boot --validator</text>
       <rect x="192" y="60" width="170" height="20" fill="#0b0f0d" class="type" style="--t:.45s;--d:.9s;--n:18;--w:170px"/>
 
-      <text x="32" y="100" class="l dim" style="animation-delay:1.7s">booting node ... genesis 2024-04-05</text>
-      <text x="32" y="124" class="l" style="animation-delay:2.0s"><tspan class="ok">[  OK  ]</tspan> chains <tspan class="dim">.........</tspan> ethereum · solana · cosmos · aztec · monad · metis · near</text>
-      <text x="32" y="148" class="l" style="animation-delay:2.25s"><tspan class="ok">[  OK  ]</tspan> infra <tspan class="dim">..........</tspan> terraform · kubernetes · ansible · gcp</text>
-      <text x="32" y="172" class="l" style="animation-delay:2.5s"><tspan class="ok">[  OK  ]</tspan> observe <tspan class="dim">........</tspan> prometheus · grafana · loki</text>
-      <text x="32" y="196" class="l" style="animation-delay:2.75s"><tspan class="ok">[  OK  ]</tspan> langs <tspan class="dim">..........</tspan> go · typescript · python · bash</text>
-      <text x="32" y="220" class="l" style="animation-delay:3.0s"><tspan class="peer">[ PEER ]</tspan> upstream <tspan class="dim">.......</tspan> go-ethereum · cometbft · nitro · dydx-v4 · osmosis · cosmjs</text>
-      <text x="32" y="244" class="l" style="animation-delay:3.3s"><tspan class="sync">[ SYNC ]</tspan> blocks <tspan class="dim">.........</tspan> {{contributions}} contributions in the last year</text>
+      <text x="32" y="100" class="l dim" style="animation-delay:1.7s">booting node ... genesis {{genesis}}</text>
+      <text x="32" y="124" class="l" style="animation-delay:2.0s"><tspan class="ok">[  OK  ]</tspan> chains <tspan class="dim">.........</tspan> {{chains}}</text>
+      <text x="32" y="148" class="l" style="animation-delay:2.25s"><tspan class="ok">[  OK  ]</tspan> infra <tspan class="dim">..........</tspan> {{infra}}</text>
+      <text x="32" y="172" class="l" style="animation-delay:2.5s"><tspan class="ok">[  OK  ]</tspan> observe <tspan class="dim">........</tspan> {{observe}}</text>
+      <text x="32" y="196" class="l" style="animation-delay:2.75s"><tspan class="ok">[  OK  ]</tspan> langs <tspan class="dim">..........</tspan> {{langs}}</text>
+      <text x="32" y="220" class="l" style="animation-delay:3.0s"><tspan class="peer">[ PEER ]</tspan> upstream <tspan class="dim">.......</tspan> {{upstream}}</text>
+      <text x="32" y="244" class="l" style="animation-delay:3.3s"><tspan class="sync">[ SYNC ]</tspan> blocks <tspan class="dim">.........</tspan> {{contributions}} contributions · {{active}} active days</text>
       <g class="l" style="animation-delay:3.3s">
         <rect x="606" y="233" width="200" height="12" rx="2" fill="#1a221e"/>
-        <rect x="606" y="233" width="200" height="12" rx="2" fill="#e879b9" class="fill" filter="url(#glow)"/>
+        <rect x="606" y="233" width="{{bar_w}}" height="12" rx="2" fill="#e879b9" class="fill" filter="url(#glow)"/>
       </g>
-      <text x="818" y="244" class="l sync bar" style="animation-delay:4.6s">100%</text>
+      <text x="818" y="244" class="l sync bar" style="animation-delay:4.6s">{{active_pct}}%</text>
 
-      <text x="32" y="280" class="l" style="animation-delay:5.0s"><tspan class="amb">jonathan@nansen</tspan><tspan class="dim">:~$ </tspan>whoami</text>
-      <rect x="192" y="266" width="60" height="20" fill="#0b0f0d" class="type" style="--t:5.1s;--d:.45s;--n:6;--w:60px"/>
+      <text x="32" y="268" class="l" style="animation-delay:4.7s"><tspan class="amb">[ HEAD ]</tspan> latest <tspan class="dim">.........</tspan> {{head}}</text>
 
-      <text x="32" y="310" class="l hi" style="animation-delay:5.9s" filter="url(#glow)">Jonathan Chin <tspan class="dim" font-weight="400">—</tspan> <tspan class="amb">staking &amp; infrastructure engineer @ nansen-ai</tspan></text>
-      <text x="32" y="334" class="l" style="animation-delay:6.2s">keeping validators signing, and fixing the clients they run on.</text>
+      <text x="32" y="304" class="l" style="animation-delay:5.0s"><tspan class="amb">jonathan@nansen</tspan><tspan class="dim">:~$ </tspan>whoami</text>
+      <rect x="192" y="290" width="60" height="20" fill="#0b0f0d" class="type" style="--t:5.1s;--d:.45s;--n:6;--w:60px"/>
 
-      <text x="32" y="368" class="l" style="animation-delay:6.5s"><tspan class="amb">jonathan@nansen</tspan><tspan class="dim">:~$ </tspan></text>
-      <rect x="192" y="355" width="9" height="17" fill="#ffb454" class="cursor"/>
+      <text x="32" y="334" class="l hi" style="animation-delay:5.9s" filter="url(#glow)">Jonathan Chin <tspan class="dim" font-weight="400">—</tspan> <tspan class="amb">staking &amp; infrastructure engineer @ nansen-ai</tspan></text>
+      <text x="32" y="358" class="l" style="animation-delay:6.2s">{{tagline}}</text>
+
+      <text x="32" y="392" class="l" style="animation-delay:6.5s"><tspan class="amb">jonathan@nansen</tspan><tspan class="dim">:~$ </tspan></text>
+      <rect x="192" y="379" width="9" height="17" fill="#ffb454" class="cursor"/>
     </g>
 
-    <rect width="900" height="400" fill="url(#vignette)" pointer-events="none"/>
-    <rect width="900" height="400" fill="url(#scan)" pointer-events="none"/>
+    <rect width="900" height="424" fill="url(#vignette)" pointer-events="none"/>
+    <rect width="900" height="424" fill="url(#scan)" pointer-events="none"/>
   </g>
 </svg>

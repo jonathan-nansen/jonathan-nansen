@@ -132,9 +132,7 @@ if __name__ == "__main__":
     import os
 
     user, out = sys.argv[1], sys.argv[2]
-    cal = fetch(user, os.environ["GITHUB_TOKEN"])
-    svg = render(cal)
+    svg = render(fetch(user, os.environ["GITHUB_TOKEN"]))
     os.makedirs(os.path.dirname(out) or ".", exist_ok=True)
     with open(out, "w") as f:
         f.write(svg)
-    print(cal["totalContributions"])
