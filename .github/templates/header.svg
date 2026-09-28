@@ -72,7 +72,7 @@
       <text x="32" y="172" class="l" style="animation-delay:2.5s"><tspan class="ok">[  OK  ]</tspan> observe <tspan class="dim">........</tspan> prometheus · grafana · loki</text>
       <text x="32" y="196" class="l" style="animation-delay:2.75s"><tspan class="ok">[  OK  ]</tspan> langs <tspan class="dim">..........</tspan> go · typescript · python · bash</text>
       <text x="32" y="220" class="l" style="animation-delay:3.0s"><tspan class="peer">[ PEER ]</tspan> upstream <tspan class="dim">.......</tspan> go-ethereum · cometbft · nitro · dydx-v4 · osmosis · cosmjs</text>
-      <text x="32" y="244" class="l" style="animation-delay:3.3s"><tspan class="sync">[ SYNC ]</tspan> blocks <tspan class="dim">.........</tspan> 950+ contributions in the last year</text>
+      <text x="32" y="244" class="l" style="animation-delay:3.3s"><tspan class="sync">[ SYNC ]</tspan> blocks <tspan class="dim">.........</tspan> {{contributions}} contributions in the last year</text>
       <g class="l" style="animation-delay:3.3s">
         <rect x="606" y="233" width="200" height="12" rx="2" fill="#1a221e"/>
         <rect x="606" y="233" width="200" height="12" rx="2" fill="#e879b9" class="fill" filter="url(#glow)"/>

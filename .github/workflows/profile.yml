@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: [.github/workflows/profile.yml, .github/scripts/**]
+    paths: [.github/**]
 
 permissions:
   contents: write
@@ -22,8 +22,15 @@ jobs:
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
 
-      - name: 3d contribution graph
-        run: python3 .github/scripts/contrib3d.py "$GITHUB_REPOSITORY_OWNER" dist/contrib-3d.svg
+      - name: 3d contribution graph + header
+        run: |
+          total=$(python3 .github/scripts/contrib3d.py "$GITHUB_REPOSITORY_OWNER" dist/contrib-3d.svg)
+          sed "s/{{contributions}}/$total/" .github/templates/header.svg > dist/header.svg
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: upstream pull requests
+        run: python3 .github/scripts/upstream.py "$GITHUB_REPOSITORY_OWNER" nansen-ai dist/upstream.svg
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
